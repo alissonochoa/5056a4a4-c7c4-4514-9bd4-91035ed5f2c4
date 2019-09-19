@@ -35,7 +35,8 @@ class Main(object):
             print(" ".join(row))
             self.pascal_triangle_b(level, index=index + 1)
         pass
-@timeit(logger)
+    
+    @timeit(logger)
     def pascal_triangle(self, level, option):
         if "a" == option.lower():
             self.pascal_triangle_a(level=level, index=0)
