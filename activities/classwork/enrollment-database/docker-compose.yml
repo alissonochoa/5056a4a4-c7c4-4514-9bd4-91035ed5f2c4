@@ -3,7 +3,7 @@ version: '3'
 services:
 
   enrollment-database:
-    image: postgres:11-alpine
+    image: postgres:11-alpine  #es como una clase, descrip. de la base de datos
     container_name: enrollment-database
     ports:
       - 5432:5432
