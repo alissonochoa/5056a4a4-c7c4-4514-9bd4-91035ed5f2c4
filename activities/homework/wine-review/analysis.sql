@@ -198,7 +198,7 @@ ORDER BY
 -- G) What's the average wine price and points of the countries with more than a 7 in their happiness score?
 -- Show the country, avg-price, avg-points.
 -- Ordered by avg-points and then by avg-price.
-SELECT DISTINCT happiness_score, name from country ;
+SELECT DISTINCT happiness_score, name FROM country c INNER JOIN wine w ON c.id = w.country_id INNER JOIN review r ON w.id = r.wine_id WHERE happiness_score > 7;
 SELECT
     c.name AS "Country",
     AVG(r.price)::numeric(7,2) AS "Average wine price",
@@ -208,7 +208,7 @@ FROM
 WHERE
     c.happiness_score > 7
 GROUP BY
-    c.happiness_score,
+    --c.happiness_score,
     c.name
 ORDER BY
     "Average wine points",
