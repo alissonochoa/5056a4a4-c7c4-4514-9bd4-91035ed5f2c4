@@ -13,7 +13,14 @@ object PrimeSearch {
   *    - Return a string separated by commas: 2, 3, 5, 7, 11, 13
   */
 
-  def isPrime(num: Long): Boolean = ???
+  def isPrime(num: Long, (Int)) => Boolean  {
+    for (i <- 2 to num -1){
+      if (num % i == 0){
+        return false;
+      }
+    }
+    return true;
+  }
 
   def main(args: Array[String]): Unit = {
     val Array(start, end) = args
