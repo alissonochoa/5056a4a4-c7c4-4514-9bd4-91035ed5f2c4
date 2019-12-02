@@ -76,10 +76,7 @@ class ServerSpecs extends WordSpec with Matchers with ScalatestRouteTest with Js
     "return a correct answer for size=3" in {
       Get("/problems/3?size=3") ~> Server.route ~> check {
         val response = responseAs[String]
-        //def pascal(c: Int, r: Int): Int = if (c == r || c == 0) 1 else pascal(c - 1, r - 1) + pascal(c, r - 1)
-        val pascalTriangle = Array(pascal(c: Int, r: Int): Int) = if (c==r ||c== 0)1 else pascal(c - 1, r-1)+ pascal(c,r-1))
-      }
-
+        val pascalTriangle =
           """
             |1<br>
             |1 1<br>
@@ -87,7 +84,7 @@ class ServerSpecs extends WordSpec with Matchers with ScalatestRouteTest with Js
             |1 3 3 1
           """.stripMargin
         response shouldBe pascalTriangle.replaceAll("\n", "").trim
-
+      }
     }
     "return a correct answer for size=15" in {
       Get("/problems/3?size=15") ~> Server.route ~> check {
