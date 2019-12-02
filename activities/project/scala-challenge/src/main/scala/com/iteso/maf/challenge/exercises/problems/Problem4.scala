@@ -52,12 +52,11 @@ case object Problem4 extends Problem {
       parameterMap {
         params => {
           // <---- Your code starts here. --->
-
           // A) Implicit class here with:
           // def asInt: Option[Int] = ???
           implicit class StringOps(string: String) {
             def asInt(): Option[Int] = scala.util.Try(string.toInt).toOption //si si puede es some, si no es none
-          }
+          } // end of the class 
 
 
           // B) Implement the calculate method.
